@@ -22,25 +22,30 @@ Please check if all those requirements are satisfied on your environment.
 
 Geting a lock is always an atomic operation. If you try to get more than one lock (by specifying an array), this is also executed atomic.
 
-Get lock(s):
-  * Lock.get :lock_name
-  * Lock.get [:lock_name1, :lock_name2]
+==== Get lock(s):
+  Lock.get :lock_name
+or
+  Lock.get [:lock_name1, :lock_name2]
 
-  optional you can specify a value (for example the user, which acquired the lock):
-  * Lock.get :lock_name, :value => 'value'
-  * Lock.get [:lock_name1, :lock_name2], :value => 'value'
+optional you can specify a value (for example the user, which acquired the lock):
+  Lock.get :lock_name, :value => 'value'
+or
+  Lock.get [:lock_name1, :lock_name2], :value => 'value'
 
-  You can let Lock.get block, until the lock was acquired:
-  * Lock.get :lock_name, :blocking => true
-  * Lock.get [:lock_name1, :lock_name2], :blocking => true
+You can let Lock.get block, until the lock was acquired:
+  Lock.get :lock_name, :blocking => true
+or
+  Lock.get [:lock_name1, :lock_name2], :blocking => true
 
-Release lock(s):
-  * Lock.release :lock_name
-  * Lock.release [:lock_name1, :lock_name2]
+==== Release lock(s):
+  Lock.release :lock_name
+or
+  Lock.release [:lock_name1, :lock_name2]
 
-  Only release a lock, if the value matches:
-  * Lock.release :lock_name, :value => 'value'
-  * Lock.release [:lock_name1, :lock_name2], :value => 'value'
+Only release a lock, if the value matches:
+  Lock.release :lock_name, :value => 'value'
+or
+  Lock.release [:lock_name1, :lock_name2], :value => 'value'
 
 == Generators
 
