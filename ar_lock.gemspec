@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["philip.kurmann@inwork.ch"]
   s.homepage    = ""
   s.summary     = %q{Atomic lock model implemented by Active Record}
-  s.description = %q{Atomic lock mode which stores its locks in the database.}
+  s.description = %q{Atomic lock model which stores its locks in the database.}
 
   s.rubyforge_project = "ar_lock"
 
