@@ -32,6 +32,9 @@ You can let Lock.get block, until the lock was acquired:
 If you do not want a lock which was already acquired will block your code:
   Lock.get :lock_name, blocking: true, successful_if: :value_matches
 
+It is possible, to force a lock. Values of already acquired locks will be overwriten by the given value.
+  Lock.get :lock_name, value: 'value', force: true
+
 ==== Release lock(s):
 Release one Lock:
   Lock.release :lock_name
@@ -65,4 +68,4 @@ This will create a database migration:
 
 == Copyright
 
-Copyright (c) 2011 Philip Kurmann. See LICENSE for details.
+Copyright (c) 2011-2012 Philip Kurmann. See LICENSE for details.
