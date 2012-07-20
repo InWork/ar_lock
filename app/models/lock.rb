@@ -108,7 +108,7 @@ private
           end
         end
 
-        # Wait some secound inside the transaction for debuging and testing purposes
+        # Wait some seconds inside the transaction for debuging and testing purposes
         sleep args[:debug_wait].to_i if args[:debug_wait]
       end
     end
