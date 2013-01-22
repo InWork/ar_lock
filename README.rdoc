@@ -32,7 +32,7 @@ You can let Lock.get block, until the lock was acquired:
 If you do not want a lock which was already acquired will block your code:
   Lock.get :lock_name, blocking: true, successful_if: :value_matches
 
-It is possible, to force a lock. Values of already acquired locks will be overwriten by the given value.
+It is possible to force a lock. Values of already acquired locks will be overwriten by the given value.
   Lock.get :lock_name, value: 'value', force: true
 
 ==== Release lock(s):
@@ -66,6 +66,8 @@ This will create a database migration:
 
   TIMESTAMP_add_ar_lock_table.rb
 
-== Copyright
+== License
+This project is licenced under the MIT license.
 
-Copyright (c) 2011-2012 Philip Kurmann. See LICENSE for details.
+== Author
+Philip Kurmann (philip (at) kman.ch)
