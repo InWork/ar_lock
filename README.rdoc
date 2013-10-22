@@ -1,4 +1,5 @@
 = ArLock for Rails3
+{<img src="https://codeclimate.com/github/InWork/ar_lock.png" />}[https://codeclimate.com/github/InWork/ar_lock]
 
 This Rails3 Gem implements an atomic locking model based on ActiveRecord.
 
