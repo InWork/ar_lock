@@ -2,8 +2,9 @@ class Lock < ActiveRecord::Base
 
   # Get an atomic lock if value matches or is nil. Block until lock was successful if args[:blocking] was set to true
   def self.get name, args = {}
-    poll_time = args[:poll_time] || 10
-    until (lock = get_lock_for(name, args)) || args[:blocking] != true do
+    poll_time  = args[:poll_time] || 10
+    start_time = Time.now
+    until (lock = get_lock_for(name, args)) || args[:blocking] != true || (args[:timeout] && (Time.now - start_time) > args[:timeout]) do
       sleep poll_time
     end
     lock
@@ -69,7 +70,7 @@ private
   # Get an atomic lock if value matches or is nil
   def self.get_lock_for names, args = {}
     successful_if_value_matches = args[:successful_if].to_s == 'value_matches'
-    successful = false
+    successful                  = false
 
     if names
       # If names is a single string, transorm it to an array
